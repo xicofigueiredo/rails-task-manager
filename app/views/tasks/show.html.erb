@@ -1,0 +1,4 @@
+<h1>Your selected task:</h1>
+<%= @task.title + " -> " + @task.details %>
+<p><%= link_to "Edit this task", edit_path(@task) %></p>
+<p><%= link_to "Back to list", tasks_path %></p>

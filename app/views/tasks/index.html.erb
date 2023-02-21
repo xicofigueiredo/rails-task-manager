@@ -1,0 +1,10 @@
+<h1>Here are your tasks:</h1>
+<ul>
+  <% @tasks.each do |task| %>
+  <% if task.completed == true %>
+    <li><%= "☑️ " %><%= link_to task.title, task_path(task) %><%= link_to " - 🗑️ ", destroy_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+    <% else %> <li> <%= "⬜ " %><%= link_to task.title, task_path(task) %><%= link_to " - 🗑️ ", destroy_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+    <% end %>
+  <% end %>
+</ul>
+<p><%= link_to "+Add a new task", tasks_new_path %></p>
